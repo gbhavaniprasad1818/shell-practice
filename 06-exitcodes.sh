@@ -20,3 +20,6 @@ else
 fi
 
 
+ping -c1 google.com > /dev/null 2>&1
+[ $? -eq 0 ] && echo "Host reachable" || echo "Host not reachable"
+
