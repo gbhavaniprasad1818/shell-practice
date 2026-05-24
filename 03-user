@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "who is running this: $USER"
