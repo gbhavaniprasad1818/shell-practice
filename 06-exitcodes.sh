@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "ls /tmp running"
 ls /tmp
 
@@ -8,6 +9,7 @@ exit 1
 else
     echo "ls /tmp is SUCCESS"
 fi
+
 
 echo "ls /fakeddir running"
 ls /fakeddir
@@ -20,6 +22,20 @@ else
 fi
 
 
-ping -c1 google.com > /dev/null 2>&1
-[ $? -eq 0 ] && echo "Host reachable" || echo "Host not reachable"
 
+echo "ping google.com running"
+ping -c1 google.com
+
+if [ $? -eq 0 ]; then
+    echo "Host reachable"
+
+else
+    echo "Host not reachable"
+fi
+
+
+if [ $? -eq 0 ]; then
+    echo " exit 0"
+else
+    cho " exit 1"
+fi
