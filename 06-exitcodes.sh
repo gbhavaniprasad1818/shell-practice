@@ -22,10 +22,7 @@ else
 fi
 
 
-
-echo "ping google.com running"
-ping -c1 google.com
-
+ping -c1 google.com > /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo "Host reachable"
 
@@ -37,5 +34,5 @@ fi
 if [ $? -eq 0 ]; then
     echo " exit 0"
 else
-    cho " exit 1"
+    echo " exit 1"
 fi
