@@ -4,7 +4,7 @@
 
 # give the path of the directory where you want to archive files
 #---------------------------------------------------------------
-BASE=/devops/repos 
+BASE=/devops/repos/shell-practices/archiving-files
 
 DAYS=30 # 30days files will be archived 
 DEPTH=1
