@@ -9,7 +9,7 @@ if [[ $FREE_SPACE -lt $TH ]]
 then
 	echo "WARNING, RAM is running low"
 else
-	echo "RAM Space is sufficient - $FREE_SPACE M"
+	echo "RAM Space is sufficient - $FREE_SPACE MB"
 fi
 
 if [[ $FREE_SPACE -lt $TH ]]; then
