@@ -27,6 +27,7 @@ if [ "$ACTION" != "create" ] && [ "$ACTION" != "delete" ]; then
 fi
 
 
+
 get_instance_id(){
     name=$1
     aws ec2 describe-instances --filters "Name=tag:Name,Values=roboshop-$name" "Name=instance-state-name,Values=running" --query "Reservations[0].Instances[0].InstanceId" --output text
@@ -47,6 +48,9 @@ do
             --output text 
             )
             echo "Launched Instance: $INSTANCE_ID"
+            aws ec2 wait instance-running --instance-ids $INSTANCE_ID
+            echo "Instance is running: $INSTANCE_ID"
+
         else
             echo "roboshop-$instance already running: $INSTANCE_ID"
         fi
